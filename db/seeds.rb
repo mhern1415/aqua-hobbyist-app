@@ -1,5 +1,5 @@
 User.destroy_all
-Post.destroy_all
+Tank.destroy_all
 
 mark = User.create(name: "Mark", email: "mark@mark.com", image_url: "https://imgur.com/2WyHhuv", bio: "i love plants", password: "pw")
 
