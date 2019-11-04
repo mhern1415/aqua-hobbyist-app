@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191101232500) do
+ActiveRecord::Schema.define(version: 20191104223547) do
 
-  create_table "aquariums", force: :cascade do |t|
+  create_table "tanks", force: :cascade do |t|
     t.string   "title"
     t.string   "image_url"
     t.string   "size"
