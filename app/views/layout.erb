@@ -19,6 +19,14 @@
         <%= yield %>
 
       <footer class="branding">
+      <div class="nav">
+        <% if logged_in? %>
+          <a href="/posts">All Posts</a>
+          <a href="/">Create a Post</a>
+          <a href="/logout">Log Out</a>
+        <% end %>
+      </div>
+      <br>
         <small>&copy; 2019 <strong>AquaHobbyistApp</strong></small>
       </footer>
     </div>
