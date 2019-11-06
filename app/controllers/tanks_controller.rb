@@ -1,0 +1,10 @@
+class TanksController < ApplicationController
+  
+  
+  
+  
+  
+  
+  
+  
+end
