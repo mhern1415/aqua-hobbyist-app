@@ -9,6 +9,10 @@ class TanksController < ApplicationController
     erb :"tanks/new"
   end 
   
+  post "/posts" do
+    
+  end
+  
   get '/tanks/:id' do
     @tank = Tank.find(params[:id])
     erb :"/tanks/show"
