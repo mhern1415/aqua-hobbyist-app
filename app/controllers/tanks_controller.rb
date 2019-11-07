@@ -35,7 +35,7 @@ class TanksController < ApplicationController
     erb :"tanks/edit"
   end
   
-  patch "tanks/:id" do 
+  patch "/tanks/:id" do 
     @tank = Tank.find(params[:id])
     @tank.update(title: params[:title], image_url: params[:image_url], size: params[:size], flora: params[:flora])
     redirect "/tanks/#{@tank.id}"
@@ -43,7 +43,6 @@ class TanksController < ApplicationController
     
     
   delete '/tanks/:id' do
-        # we need the id to FIND the post to delete
     @tank = Tank.find(params[:id])
     @tank.destroy
     redirect '/tanks'
