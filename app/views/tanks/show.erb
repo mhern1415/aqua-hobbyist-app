@@ -1,0 +1,9 @@
+  
+<h1><%= @tank.title %></h1>
+<img src="<%= @tank.image_url %>" alt="<%= @tank.title %>" height="490" width="650">
+<br><br>
+<strong>Created At: <%= @tank.created_at %></strong>
+
+<p>Size: <%= @tank.size %></p>
+<p>Fish and Plants Used: <%= @tank.flora %></p>
+<p>By: <%= @tank.user.name %></p>
