@@ -1,0 +1,14 @@
+<h1>Edit Tank</h1>
+
+<form class="" action="/tanks/<%= @tank.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for="title">Title:</label>
+  <input type="text" name="title" value ="<%= @tank.title %>">
+  <label for="size">Size:</label>
+  <textarea name="size" style="width:auto; height:auto;"><%= @tank.size %></textarea>
+  <label for="flora">Flora:</label>
+  <textarea name="Flora" style="width:auto; height:auto;"><%= @tank.flora %></textarea>
+  <label for="image_url">Image URL:</label>
+  <input type="text" name="image_url" value ="<%= @tank.image_url %>">
+  <input type="submit" name="" value="Submit">
+</form>
