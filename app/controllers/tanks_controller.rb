@@ -5,12 +5,16 @@ class TanksController < ApplicationController
     erb :"tanks/index"
   end
   
+  get "/tanks/new" do
+    erb :"tanks/new"
+  end 
+  
   get '/tanks/:id' do
     @tank = Tank.find(params[:id])
     erb :"/tanks/show"
   end
   
-  
+
   
   
 end
