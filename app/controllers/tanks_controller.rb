@@ -9,8 +9,20 @@ class TanksController < ApplicationController
     erb :"tanks/new"
   end 
   
-  post "/posts" do
-    
+  post "/tanks" do
+    @tank = Tank.new(title: params[:title], image_url: params[:image_url], size: params[:size], flora: params[:flora], user_id: current_user.id)
+    if @tank.save
+    # ^ if valid input — .save triggers our validation
+    #if params[:title] != "" && params[:description] != "" && params[:image_url] != ""
+      # show post creation success message
+      #flash[:message] = "Created post successfully!"
+      # redirect to the post show page
+      redirect "/tanks/#{@tank.id}"
+    else
+      # show post creation error message
+     # flash[:error] = "Post creation failed: #{post.errors.full_messages.to_sentence}"
+      redirect "/tanks/new"
+    end
   end
   
   get '/tanks/:id' do

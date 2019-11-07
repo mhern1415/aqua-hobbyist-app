@@ -7,3 +7,10 @@
 <p>Size: <%= @tank.size %></p>
 <p>Fish and Plants Used: <%= @tank.flora %></p>
 <p>By: <%= @tank.user.name %></p>
+
+<a href="/tanks/<%= @tank.id %>/edit">Edit Tank</a>
+
+<form class="" action="/tanks/<%= @tank.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="" value="Delete This Tank">
+</form>
