@@ -6,7 +6,12 @@ class TanksController < ApplicationController
   end
   
   get "/tanks/new" do
-    erb :"tanks/new"
+    if logged_in?
+      erb :"tanks/new"
+    else
+      flash[:error] = "You must be logged in to add a new tank!"
+      redirect "/"
+    end
   end 
   
   post "/tanks" do
@@ -24,10 +29,15 @@ class TanksController < ApplicationController
     @tank = Tank.find(params[:id])
     erb :"/tanks/show"
   end
-  
+   
   get "/tanks/:id/edit" do
     @tank = Tank.find(params[:id])
-    erb :"tanks/edit"
+    if authorized_to_edit?(@tank)
+      erb :"tanks/edit"
+    else
+      flash[:error] = "Error: You are not authorized to edit that tank"
+      redirect '/tanks'
+    end
   end
   
   patch "/tanks/:id" do 

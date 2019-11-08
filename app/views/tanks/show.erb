@@ -1,15 +1,17 @@
-  
-<h1><%= @tank.title %></h1>
-<img src="<%= @tank.image_url %>" alt="<%= @tank.title %>" height="490" width="650">
+<h1 style="text-align:center;"><%= @tank.title %></h1>
+<br>
+<br>
+<img src="<%= @tank.image_url %>" alt="<%= @tank.title %>" height="723" width="960"class="center">
 <br><br>
-<strong>Created At: <%= @tank.created_at %></strong>
+<p style="text-align:center;">Created At: <%= @tank.created_at %></p>
 <br><br>
 <p style="text-align:center; color:blue; font-size:150%">Size: <%= @tank.size %></p>
 <p style="text-align:center; color:blue; font-size:150%">Fish and Plants Used: <%= @tank.flora %></p>
 <p style="text-align:center; color:blue; font-size:150%">By: <%= @tank.user.name %></p>
 
 <a href="/tanks/<%= @tank.id %>/edit">Edit Tank</a>
-
+<br>
+<br>
 <form class="" action="/tanks/<%= @tank.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" name="" value="Delete This Tank">

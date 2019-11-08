@@ -28,6 +28,10 @@ class ApplicationController < Sinatra::Base
       !!current_user
     end
     
+    def authorized_to_edit?(tank)
+      tank.user == current_user
+    end
+    
   end
 
 end
