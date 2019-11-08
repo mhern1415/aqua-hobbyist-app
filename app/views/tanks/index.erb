@@ -1,6 +1,7 @@
 <h1>All Tanks</h1>
 <% @tanks.each do |tank| %>
-  <h4><a href="/tanks/<%= tank.id %>"><%= tank.title %></a></h4>
+  <h2><a href="/tanks/<%= tank.id %>"><%= tank.title %></a></h2>
+  <br>
   <img src="<%= tank.image_url %>" alt="<%= tank.title %>" height="220" width="300">
 <br><br>
   <strong>Created At: <%= tank.created_at %></strong>

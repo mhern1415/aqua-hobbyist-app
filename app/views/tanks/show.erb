@@ -3,10 +3,10 @@
 <img src="<%= @tank.image_url %>" alt="<%= @tank.title %>" height="490" width="650">
 <br><br>
 <strong>Created At: <%= @tank.created_at %></strong>
-
-<p>Size: <%= @tank.size %></p>
-<p>Fish and Plants Used: <%= @tank.flora %></p>
-<p>By: <%= @tank.user.name %></p>
+<br><br>
+<p style="text-align:center; color:blue; font-size:150%">Size: <%= @tank.size %></p>
+<p style="text-align:center; color:blue; font-size:150%">Fish and Plants Used: <%= @tank.flora %></p>
+<p style="text-align:center; color:blue; font-size:150%">By: <%= @tank.user.name %></p>
 
 <a href="/tanks/<%= @tank.id %>/edit">Edit Tank</a>
 
