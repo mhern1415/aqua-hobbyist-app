@@ -9,6 +9,8 @@
 <p style="text-align:center; color:blue; font-size:150%">Fish and Plants Used: <%= @tank.flora %></p>
 <p style="text-align:center; color:blue; font-size:150%">By: <%= @tank.user.name %></p>
 
+<% if authorized_to_edit?(@tank) %>
+
 <a href="/tanks/<%= @tank.id %>/edit">Edit Tank</a>
 <br>
 <br>
@@ -16,3 +18,5 @@
   <input type="hidden" name="_method" value="delete">
   <input type="submit" name="" value="Delete This Tank">
 </form>
+
+<% end %>
