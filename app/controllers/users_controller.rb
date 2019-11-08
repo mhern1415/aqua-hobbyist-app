@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       flash[:message] = "Welcome back, #{user.name}!"
       redirect "/users/#{user.id}"
     else
-      flash[:error] = "Whoops! Username or password incorrect"
+      flash[:error] = "Whoops! Username or password incorrect."
       redirect "/login"
     end
   end
@@ -22,22 +22,21 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    #render my sign form
     erb :'/users/signup'
   end
 
-  # post sign up route that recieve input data from user, create the user, and logs user in
   post '/users' do
-    # will eventually need to add validations to confirm all inputs are filled out before creating user
     @user = User.create(params)
-    # post sign up route to create user using params and add key/value pair to sessions hash
-    session[:user_id] = @user.id
-    # redirect to user profile
-    redirect "/users/#{@user.id}"
+    if @user.save
+      session[:user_id] = @user.id
+      redirect "/users/#{@user.id}"
+    else
+      flash[:error] = "User creation failed! #{@user.errors.full_messages.to_sentence}"
+      redirect "/signup"
+    end
   end
 
-  # LOG OUT
-  # get logout that clears the session hash
+
   get '/logout' do
     #binding.pry
     session.clear
