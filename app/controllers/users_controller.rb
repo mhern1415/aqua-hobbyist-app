@@ -8,8 +8,10 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      flash[:message] = "Welcome back, #{user.name}!"
       redirect "/users/#{user.id}"
     else
+      flash[:error] = "Whoops! Username or password incorrect"
       redirect "/login"
     end
   end
