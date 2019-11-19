@@ -23,7 +23,8 @@ body {
 
 /* Container for flexboxes */
 .row {
-  
+ 
+  align-self: center;
   text-align: center;
   display: -webkit-flex;
   display: flex;
@@ -31,8 +32,8 @@ body {
 
 /* Create three unequal columns that sits next to each other */
 .column {
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  padding: 75px;
+  height: 150px; /* Should be removed. Only for demonstration */
 }
 
 /* Left and right column */
