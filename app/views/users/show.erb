@@ -1,10 +1,16 @@
-<h1><%= @user.name %></h1>
-<img src="<%= @user.image_url %>" alt="<%= @user.name %> profile photo" height="200" width="200">
+
+
+<html>
+<div class="header">
+  <h2><%= @user.name %></h2>
+</div>
+
+<div class="row">
+  <div class="column side" style="background-color: #3399ff; font-size:20px; height: 1000px;"><img src="<%= @user.image_url %>" alt="<%= @user.name %> profile photo" height="200" width="200">
 <br><br>
 <p>Email: <%= @user.email %></p>
-<p>Bio: <%= @user.bio %></p>
-
-<h1>My Tanks</h1>
+<p>Bio: <%= @user.bio %></p></div>
+  <div class="column middle" style="background-color:#cce6ff;font-size:20px; height: 1000px;"><h1>My Tanks</h1>
 <% @user.tanks.each do |tank| %>
   <h4><a href="/tanks/<%= tank.id %>"><%= tank.title %></a></h4>
   <img src="<%= tank.image_url %>" alt="<%= tank.title %>" height="220" width="300">
@@ -14,4 +20,13 @@
   <p>Fish and Plants: <%= tank.flora %></p>
   <p>By: <%= tank.user.name %></p>
 <% end %>
+
+</div>
+
+</div>
+
+
+
+</body>
+</html>
 

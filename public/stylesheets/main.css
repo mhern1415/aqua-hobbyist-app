@@ -33,7 +33,7 @@ body {
 /* Create three unequal columns that sits next to each other */
 .column {
   padding: 75px;
-  height: 150px; /* Should be removed. Only for demonstration */
+  /* Should be removed. Only for demonstration */
 }
 
 /* Left and right column */
