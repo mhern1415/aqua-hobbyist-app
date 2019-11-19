@@ -38,10 +38,7 @@ class UsersController < ApplicationController
 
 
   get '/logout' do
-    #binding.pry
     session.clear
-    #binding.pry
-    # redirect to home/landing page
     redirect '/'
   end
   
