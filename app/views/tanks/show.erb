@@ -1,14 +1,20 @@
-<h1 style="text-align:center;"><%= @tank.title %></h1>
-<br>
-<br>
-<img src="<%= @tank.image_url %>" alt="<%= @tank.title %>" height="723" width="960"class="center">
-<br><br>
-<p style="text-align:center;">Created At: <%= @tank.created_at %></p>
-<br><br>
-<p style="text-align:center; color:blue; font-size:150%">Size: <%= @tank.size %></p>
-<p style="text-align:center; color:blue; font-size:150%">Fish and Plants Used: <%= @tank.flora %></p>
-<p style="text-align:center; color:blue; font-size:150%">By: <%= @tank.user.name %></p>
 
+
+<html>
+<div class="header">
+  <h2><%= @tank.title %></h2>
+</div>
+
+<div class="row">
+
+  <div class="column middle" style="background-color:#cce6ff;font-size:30px; height: 750px;"><img src="<%= @tank.image_url %>" alt="<%= @tank.title %>" height="723" width="960"class="center"></div>
+  
+</div>
+
+<div class="footer">
+  <p><p style="text-align:center; color:blue; font-size:150%">Size: <%= @tank.size %></p>
+<p style="text-align:center; color:blue; font-size:150%">Fish and Plants Used: <%= @tank.flora %></p>
+<p style="text-align:center; color:blue; font-size:150%">By: <%= @tank.user.name %></p></p>
 <% if authorized_to_edit?(@tank) %>
 
 <a href="/tanks/<%= @tank.id %>/edit">Edit Tank</a>
@@ -20,3 +26,7 @@
 </form>
 
 <% end %>
+</div>
+
+</body>
+</html>
