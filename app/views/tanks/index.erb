@@ -1,5 +1,11 @@
-<h1>All Tanks</h1>
-<% @tanks.each do |tank| %>
+
+<html>
+<div class="header">
+  <h2>All Tanks</h2>
+</div>
+
+<div class="row">
+  <div class="column middle" style="background-color:#cce6ff;font-size:25px; height: 2500px;"><% @tanks.each do |tank| %>
   <h2><a href="/tanks/<%= tank.id %>"><%= tank.title %></a></h2>
   <br>
   <img src="<%= tank.image_url %>" alt="<%= tank.title %>" height="220" width="300">
@@ -8,23 +14,10 @@
   <p>Tank Size: <%= tank.size %></p>
   <p>Fish and Plants: <%= tank.flora %></p>
   <p>By: <%= tank.user.name %></p>
-<% end %>
-
-
-<html>
-<div class="header">
-  <h2>All Tanks</h2>
+<% end %></div>
 </div>
 
-<div class="row">
-  <div class="column side" style="background-color: #3399ff; font-size:30px; height: 180px;">If you have an account, please press the log in button below.</div>
-  <div class="column middle" style="background-color:#cce6ff;font-size:30px; height: 180px;">Here, you will be able to share your aquariums to the world!</div>
-  <div class="column side" style="background-color:#3399ff;font-size:30px; height: 180px;">New to Aqua Hobbyist? Join us by clicking the signup button!</div>
-</div>
 
-<div class="footer">
-  <p><a href="/login">Log In</a> OR  <a href="/signup">Sign Up</a></p>
-</div>
 
 </body>
 </html>
