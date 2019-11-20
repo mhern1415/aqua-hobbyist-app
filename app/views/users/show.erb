@@ -6,11 +6,11 @@
 </div>
 
 <div class="row">
-  <div class="column side" style="background-color: #3399ff; font-size:20px; height: 1000px;"><img src="<%= @user.image_url %>" alt="<%= @user.name %> profile photo" height="200" width="200">
+  <div class="column side" style="background-color: #3399ff; font-size:20px; height: 1100px;"><img src="<%= @user.image_url %>" alt="<%= @user.name %> profile photo" height="200" width="200">
 <br><br>
 <p>Email: <%= @user.email %></p>
 <p>Bio: <%= @user.bio %></p></div>
-  <div class="column middle" style="background-color:#cce6ff;font-size:20px; height: 1000px;"><h1>My Tanks</h1>
+  <div class="column middle" style="background-color:#cce6ff;font-size:20px; height: 1100px;"><h1>My Tanks</h1>
 <% @user.tanks.each do |tank| %>
   <h4><a href="/tanks/<%= tank.id %>"><%= tank.title %></a></h4>
   <img src="<%= tank.image_url %>" alt="<%= tank.title %>" height="220" width="300">
